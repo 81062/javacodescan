@@ -37,14 +37,9 @@
 <distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>example-repo-local</name>
-        <url>https://cloudbinary.jfrog.io/artifactory/example-repo-local/</url>
+        <name>jfrog.cloudbinary.io-snapshots</name>
+        <url>http://172.174.128.12:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
-    <repository>
-        <id>example-repo-local</id>
-        <name>example-repo-local</name>
-        <url>https://cloudbinary.jfrog.io/artifactory/example-repo-local/</url>
-    </repository>
 </distributionManagement>
 
 	
