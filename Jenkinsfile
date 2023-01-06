@@ -5,7 +5,6 @@ pipeline {
             jdk 'JAVA'
     }
     stages { 
-        
         stage('Stage-0 : Static Code Analysis Using SonarQube') { 
              steps {
                  sh 'mvn clean verify sonar:sonar -DskipTests'
