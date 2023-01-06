@@ -1,15 +1,17 @@
 pipeline {
     agent any 
     tools {
-         maven 'MAVEN'
-            jdk 'JAVA'
+         maven 'maven'
+            jdk 'java'
     }
-    stages { 
-        stage('Stage-0 : Static Code Analysis Using SonarQube') { 
+    stages {
+
+         stage('Stage-0 : Static Code Analysis Using SonarQube') { 
              steps {
                  sh 'mvn clean verify sonar:sonar -DskipTests'
              }
          }
+
         stage('Stage-1 : Clean') { 
             steps {
                 sh 'mvn clean'
@@ -45,24 +47,23 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }
         }
-         stage('Stage-8 : Deploy an Artifact to Artifactory Manager i.e. Nexus/Jfrog') { 
+          stage('Stage-8 : Deploy an Artifact to Artifactory Manager i.e. Nexus/Jfrog') { 
             steps {
                 sh 'mvn deploy -DskipTests'
             }
         }
           stage('Stage-9 : Deployment - Deploy a Artifact devops-3.0.0-SNAPSHOT.war file to Tomcat Server') { 
             steps {
-                sh 'curl -u admin:redhat@123 -T target/**.war "http://20.197.50.38:8080/manager/text/deploy?path=/ashok&update=true"'
+                sh 'curl -u admin:redhat@123 -T target/**.war "http://20.197.50.38:8080/manager/text/deploy?path=/bharat&update=true"'
             }
         } 
   
           stage('Stage-10 : SmokeTest') { 
             steps {
-                sh 'curl --retry-delay 10 --retry 5 "http://20.197.50.38:8080/ashok"'
+                sh 'curl --retry-delay 10 --retry 5 "http://20.197.50.38/:8080/bharat"'
             }
         }
 
   
     }
 }
-
