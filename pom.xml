@@ -33,16 +33,6 @@
 		<sonar.login>48640802662038e439f1624a998d6f99fc9c5d21</sonar.login>
 	</properties>
 	
-	<!-- Jfrog Integration with POM.xml file -->
-<distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>jfrog.cloudbinary.io-snapshots</name>
-        <url>http://172.174.128.12:8081/artifactory/libs-snapshot-local</url>
-    </snapshotRepository>
-</distributionManagement>
-
-	
 	<scm>
 		<connection>scm:git:git@github.com:kesavkummari/javacodescan.git</connection>
 		<developerConnection>scm:git:git@github.com:kesavkummari/javacodescan.git</developerConnection>
