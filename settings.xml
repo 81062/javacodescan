@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <profiles>
+    <profile>
+      <id>default</id>
+      <repositories>
+        <repository>
+          <id>snapshots</id>
+          <name>jfrog.cloudbinary.io-snapshots</name>
+          <url>https:http://43.206.94.196:8081/artifactory/libs-snapshot-local</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>default</activeProfile>
+  </activeProfiles>
+  <servers>
+    <server>
+      <id>snapshots</id>
+      <username>sonar</username>
+      <password>redhat@123</password>
+    </server>
+  </servers>
+</settings>
